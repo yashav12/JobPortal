@@ -1,0 +1,120 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href={% static 'style2.css' %}>
+  </head>
+  <body>
+    <div>{% include 'navbar.html' %}</div>
+    <div class="views">
+      <div class="bar">
+        <h5>GET IN TOUCH</h5>
+        <h1>Contact Us</h1>
+        <a href='/'><p>Home</a><span>/Contact</span></p>
+      </div>
+    <div >
+        {% block img %} <img class="imag" src={% static 'contact.png' %}> {% endblock img %}
+     </div>
+    </div>
+    <div class="cntxt">
+      <div class="txt-1">
+        <h5>Find Us</h5>
+        <h2 class="txt">CONTACT <span>WITH US</span></h2>
+      </div>
+      <div style="display:flex; justify-content:center;justify-content:space-around;">
+      <div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-b3d2d3e elementor-position-top elementor-vertical-align-top elementor-widget elementor-widget-image-box" data-id="b3d2d3e" data-element_type="widget" data-widget_type="image-box.default">
+				<div class="elementor-widget-container">
+			<div class="elementor-image-box-wrapper"><figure class="elementor-image-box-img"><img src= {% static "tag.png" %} alt="" draggable="false"></figure><div class="elementor-image-box-content"></div></div>
+      <div class="elementor-image-box-wrapper"><div class="elementor-image-box-content"><h3 class="elementor-image-box-title">Jalandhar Office</h3><p class="elementor-image-box-description">OPPOSITE ALL INDIA RADIO STATION,<br> BACKSIDE KING HOTEL NEAR BUS STAND,<br> Jalandhar City, Punjab 144001. </p></div></div>
+      </div>
+				</div>
+			</div>
+      <div class="elementor-element elementor-element-3ba09af search_h2 elementor-position-top elementor-vertical-align-top elementor-widget elementor-widget-image-box" data-id="3ba09af" data-element_type="widget" id="contactus" data-widget_type="image-box.default">
+				<div class="elementor-widget-container">
+			<div class="elementor-image-box-wrapper"><figure class="elementor-image-box-img"><img width="64" height="64" src= {% static "phn.png" %} class="attachment-full size-full" alt="" draggable="false"></figure><div class="elementor-image-box-content"><h3 class="elementor-image-box-title">Phone No</h3><p class="elementor-image-box-description"><a href="tel:+91-97800 01982">+91-97800 01982</a><br>
+           </p></div></div>		</div>
+				</div>
+        <div class="elementor-widget-container">
+			<div class="elementor-image-box-wrapper"><figure class="elementor-image-box-img"><img width="64" height="64" src= {% static "mail.png" %} class="attachment-full size-full" alt="" draggable="false"></figure><div class="elementor-image-box-content"><h3 class="elementor-image-box-title">Email</h3><p class="elementor-image-box-description"><a href="techcaddcomputereducation@gmail.com." >techcaddcomputereducation@gmail.com.</a><br>
+<a href="info.techcaddjalandhar@gmail.com">info.techcaddjalandhar@gmail.com</a></p></div></div>		</div>
+    </div>
+  </div>
+
+<div class="section">
+      <div class="form">
+        <div class="heading">
+          <h5>Have questions?</h5>
+          <h2 class="heading1">SEND <span>A MESSAGE</span></h2>
+        </div>
+      </div>
+      <div style="display: flex; justify-content: center;">
+        <form action="/confirm" method="POST">
+          {% csrf_token %}
+          <div class="fm-group">
+            <div class="inner-group">
+              <label for="name">Name*</label>
+              <input type="text" id="name" name="username" placeholder="Name" />
+            </div>
+            <div class="inner-group">
+              <label for="name">Email*</label>
+              <input type="text" id="email" name="email" placeholder="Email" />
+            </div>
+          </div>
+          <div class="fm-group">
+            <div class="inner-group">
+              <label for="name">Phone No*</label>
+              <input type="text" id="phoneno" name="phoneno" placeholder="Phone No" />
+            </div>
+            <div class="inner-group">
+              <label for="name">Website*</label>
+              <input type="text" id="website" name="website" placeholder="Website" />
+            </div>
+          </div>
+          <div class="fm-group">
+            <div class="inner-group">
+              <label class="group" for="name">Message*</label>
+              <textarea type="text" id="message" name="message" class="group" placeholder="Message" ></textarea>
+            </div>
+            </div>
+            <div style="padding:10px;padding-left:160px;">
+            <button style=" width:70px;justify-content:center; " type="submit" name="submit" class="gform_button button btn btn-danger" value="Submit">Submit</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    </div>
+
+    <div class="maps">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d109066.42893264956!2d75.49101774058892!3d31.3223714360371!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x391a5a5747a9eb91%3A0xc74b34c05aa5b4b8!2sJalandhar%2C%20Punjab!5e0!3m2!1sen!2sin!4v1752215866196!5m2!1sen!2sin"
+        width="100%"
+        height="450"
+        style="border: 0"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+      ></iframe>
+    </div>
+
+    {% include 'footer.html' %}
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

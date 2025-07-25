@@ -1,0 +1,138 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box!important;
+}
+/* contact file code */
+.views{
+    padding:10px; 
+    display:flex;
+    justify-content: space-between;
+     background-image:url('c.jpg') ; 
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color:rgb(56, 53, 53);
+}
+   
+.bar{
+    margin-top:100px;
+    margin-left:80px;
+    padding:100px;
+    justify-content: center;
+    justify-items: center;
+    color:#17d7ec;
+}
+.bar h5 {
+ animation:time 0.8s linear 1;
+}
+.bar h1 {
+ animation:time 0.8s linear 1;
+}
+.bar p {
+ animation:time 0.8s linear 1;
+}
+@keyframes time{
+    0%{
+    transform: translateX(0px);
+    }
+    100%{
+    transform: translateX(100px);
+    }
+}
+
+.txt span{
+    color: #ec1743;
+}
+.txt-1{
+    justify-content: center;
+    justify-items: center;
+    padding:40px;
+}
+.txt-1 h5{
+    color:rgb(80, 85, 89);
+}
+.heading{
+    justify-content: center;
+    justify-items: center;
+    padding:40px;
+}
+.heading h5{
+    color:white;
+}
+.heading1 span{
+    color: #ec1743;
+}
+.heading h2{
+    color:white;
+}
+
+.form{
+    padding:5px;
+    
+}
+
+.section{
+    background-image: url('im.avif');
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-bottom: 40px;
+}
+.cntxt{
+    background-image: url('b.webp');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: #404e71;
+    padding:20px;
+    padding-bottom: 20px;
+}
+
+
+.fm-group{
+    display: flex!important;
+    align-items: center!important;
+    justify-content: center!important;
+    gap:20px;
+    padding:10px;
+}
+
+.fm-group .inner-group{
+    display: flex;
+    flex-direction: column;
+    width: 100%!important;
+    
+}
+form{
+    background-image: url('us.jpg');
+    padding:20px;
+   
+}
+.fm-group textarea{
+    width:100%!important;
+    height:100%!important;
+}
+
+label{
+    color:white;
+}
+.imag{
+    height:90%;
+    width:70%;
+   padding-top:100px; 
+   animation: floatup 4s linear infinite;
+}
+
+
+@keyframes floatup{
+    0%{
+    transform: translateY(15px);
+    }
+    100%{
+    transform: translateY(-15px);
+    }
+}
+
+
+
+
+
+

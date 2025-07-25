@@ -1,0 +1,116 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Job Portal</title> {# Changed title for clarity #}
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href={% static 'style.css' %}>
+</head>
+<body>
+
+  <div class="main-section">
+    <div class="navbar">
+      <div class="logo">
+        <b>JOB PORTAL</b>
+      </div>
+      <div class="nav-bar-items">
+        <ul class="outer-menu">
+          <li class="nav-items"><a class="nav-link" href="/">Home</a></li>
+          <li class="nav-items"><a class="nav-link" href="/job listings">Job Listings</a></li>
+          <li class="nav-items"><a class="nav-link" href="/contact us">Contact Us</a></li>
+        </ul>
+      </div>
+      <div class="txt-bar">
+        <ul><li class="nav-items"><a class="nav-link" href="/post a job">Post a job</a></li></ul>
+      </div>
+    </div>
+
+    <div class="demo">
+      <h1><b>The Easiest Way To Get Your Dream Job</b></h1>
+    </div>
+    <div class="text">
+      <form>
+        {# Corrected input types to "text" #}
+        <input type="text" placeholder="Job title,company" name="job_title_company" />
+        <input type="text" placeholder="Location" name="location" />
+        <div class="menu">
+          <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Select Job Title
+          </button>
+          <ul class="dropdown-menu submenu"> {# Added Bootstrap dropdown-menu class #}
+            <li><a class="dropdown-item" href="#">Software Developer</a></li> {# Added dropdown-item class #}
+            <li><a class="dropdown-item" href="#">Programmer</a></li>
+            <li><hr class="dropdown-divider"></li> {# Added a divider #}
+            <li><a class="dropdown-item" href="#">Other</a></li>
+          </ul>
+        </div>
+        <button class="btn btn-primary btn-sm" type="submit">
+          <i class="bx bx-search-alt-2"></i>Search Job
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <div class="a1">
+    <div class="a">
+      <h2>Job Portal Stats</h2>
+    </div>
+    <div class="b">
+      <p>3<br />Candidates</p>
+      <p>6<br />Jobs Posted</p>
+      <p>20<br />Jobs Filled</p>
+      <p>4<br />Companies</p>
+    </div>
+  </div>
+
+  <div class="id">
+    <div class="c">
+      {# Dynamically show the count of listed jobs if allJobs is a queryset #}
+      <h2>{% if allJobs %}{{ allJobs|length }}{% else %}0{% endif %} Job Listed</h2>
+    </div>
+    <div> {# Added flex-wrap and gap for better layout #}
+      {% for job in allJobs %}
+      
+        <div class="d">
+          <div class="d1">
+            <img src={% static 'icon.png' %} alt="Company Icon" style="width: 150px; height: 150px; margin-bottom: 10px;">
+
+            <h3>{{ job.title }}</h3>
+
+            <i class='bx bx-lg bxs-location-plus'></i>{{ job.location }}
+
+            {% if job.jobtype == 'Full Time' %}
+              <a href="/jobdesc"> Full Time </a>
+            {% elif job.jobtype == 'Part Time' %}
+              <a href="/jobdesc"> Part Time </a>
+            {% elif job.jobtype == 'Contract' %}
+              <button class="btn btn-info btn-sm"><a href="/jobdesc"> Contract Time </a></button>
+            {% else %} 
+              <button class="btn btn-dark btn-sm">{{ job.jobtype }}</button>
+            {% endif %}
+          </div>
+        </div>
+      {% empty %}
+        <p style="text-align: center; width: 100%;">No jobs currently listed. Please check back later!</p>
+      {% endfor %}
+
+     
+
+    </div>
+  </div>
+
+  <div class="e1">
+    <div class="e" >
+      <p><h2>Looking For a Job</h2>
+      <button class="btn btn-primary btn-sm">Sign Up</button></p>
+    </div>
+  </div>
+
+  {% include 'footer.html' %}
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
+
+</body>
+</html>
