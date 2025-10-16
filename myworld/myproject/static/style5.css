@@ -1,0 +1,175 @@
+.a-nav{
+    padding: 20px;
+    display: flex; 
+    justify-content: center;
+    justify-content: space-between; 
+    position: fixed!important;
+    width: 15%!important;
+    height: 100% !important;;
+    top: 0px;
+    left: 0px;
+    z-index: 9999!important;
+    background: rgba(198, 195, 195, 0.6)!important;
+    flex-direction: column;
+}
+
+.a-logo{
+    font-size: 30px;
+    padding-left: 10px;
+    padding-bottom:20px;
+    padding-top:20px;
+} 
+body{
+    background-image: url('../static/aad.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    object-fit:cover;
+    height:100%;
+} 
+
+.a-nav .a-outer-menu{
+    gap:40px;
+    display: flex;
+    flex-direction: column;
+}
+
+.a-nav ul li{
+    list-style:none;
+    font-size: 18px;
+    color: rgb(11, 12, 12);
+} 
+.a-txt-bar{
+   display:flex;
+   padding-top:20px; 
+}
+
+
+
+/*  jobs code  */
+
+.a-inner{
+    padding:50px;
+    justify-items:auto;
+   }
+.a-menu{
+    padding-left:20%;
+   
+  
+}
+.inner-menu-a{
+    padding:10px;
+    gap: 3rem;
+    color:black;
+}
+.mnu{
+    display:flex;
+}
+.ok-a{
+    animation: floatup 4s linear infinite;
+}
+
+.inner-menu-a img{
+    height:150px;
+    width:150px;
+}
+
+.inner-menu-b img{
+    height:150px;
+    width:150px;
+    
+}
+.inner-menu-c img{
+    height:150px;
+    width:150px;
+    
+}
+.inner-menu-b{
+    padding:10px;
+    gap: 3rem;
+    color:black;
+}
+.inner-menu-c{
+    padding:10px;
+    gap: 3rem;
+    color:black;
+}
+
+.id-a{
+    background-color:rgb(50, 53, 52);
+    justify-content: space-around;
+    padding:50px;
+    padding-bottom:50px;
+    display:flex;
+    gap: 3rem;
+    flex-direction: row;
+   }
+
+.a-id{
+    height: 25px;
+    display:flex;
+    width:70px;
+    background-color: rgb(6, 129, 244);
+    color:black;
+}
+.a-id-1{
+    display:flex;
+    height: 25px;
+    width:70px;
+    background-color: rgb(85, 152, 79);
+    color:black;
+}
+.a-ok{
+    display:flex;
+    height: 25px;
+    width:130px;
+    background-color: rgb(192, 35, 121);
+    color:black;
+}
+.icon{
+  text-align: center;
+    font-size:38px;
+    padding:20px;
+}
+@keyframes floatup{
+    0%{
+    transform: translateY(15px);
+    }
+    100%{
+    transform: translateY(-15px);
+    }
+}
+/*  admjob code */
+
+
+
+.labl{
+   
+    margin-bottom:10px; 
+}
+select{
+     margin-bottom:10px; 
+     width:100%;
+}
+
+.contact-form input{
+    width: 100% !important;
+}
+.bttn{
+   margin-left: 90%;
+   padding-top:30px;
+    padding-bottom:60px;
+  }
+.table1{
+    border-style: solid;
+    border-color: grey;
+    padding: 50px;
+    
+    
+}
+
+
+.a-main{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}

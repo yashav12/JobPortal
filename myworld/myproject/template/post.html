@@ -22,57 +22,102 @@
         {% include 'navbar.html' %}
         <div class="container">
           <h1>Post A Job</h1>
-          <a  class="cntn" href="/"><p>Home/Jobs</a><span>/Post a Job</span></p>
+          <a  class="cntn" href="/"><p>Home</a><span><a class="cntn" href="/job listings"></span>/ Jobs</a><span> / Post a Job</span></p>
         </div>
       </div>
-      <div style="padding-left:100px;padding-right:100px;padding-bottom:10px; "class="hii">
+      <div style="padding-left:25%;padding-right:25%;padding-bottom:80px; "class="hii">
       <div class="tab">
           <h3 style="color:white;">Post a Job</h3>
           <h3 style="color:white;">Save Job</h3>
         </div>
-        <div id="table1" style="border:1px solid grey;padding:20px;background-color:#d9dad9;">
+        <div id="table1" style="border:1px solid rgb(39, 37, 37);padding:20px;background-color:#242524; color:white;">
           <h3>Job Detail</h3><hr>
-          <form action="/submit" method="POST" class="contact-form">
+          <form action="/submit" method="POST" class="contact-form">                                    
          {% csrf_token %}
+         <div class="title">
+          <div style="width:70%;">
             <label for="name" >Job Title:</label><br>
             <input type="text" name="title" id="label" class="labl" placeholder="eg:software developer" /><br>
-          
-          <label for="name">Job Location:</label><br>
-          <input type="text" name="location"  id="lbl" class="labl" placeholder="eg:bangladesh" /><br>
-          
+          </div>
+         <div style="width:70%;">
+           <label for="name">Job Location:</label><br>
+           <input type="text" name="location"  id="lbl" class="labl" placeholder="eg:bangladesh" /><br>
+         </div>
+        </div>
+        <div class="type">
+          <div style="width:70%;">
           <label for="jobtype">Job Type:</label><br>
           <select name="jobtype" id="jobtype">
-            <option value="Part-Time">Part-Time</option>
-            <option value="Full-Time">Full-Time</option>
-             <option value="Intership">Intership</option>
+            <option value="Part Time">Part-Time</option>
+            <option value="Full Time">Full-Time</option>
+             <option value="Internship">Internship</option>
           </select><br>
-          
+          </div>
+          <div style="width:70%;">
+           
           <label for="name">Category:</label><br>
           <select name="category" id="category">
             <option value="IT">IT</option>
             <option value="Mechanical">Mechanical</option>
           </select><br>
-         
-        
+         </div>
+         </div>
+<div class="qual">
+          <div style="width:70%;">
+          <label for="name">Experience:</label><br>
+          <select name="experience" id="experience">
+            <option value="Fresher">Fresher</option>
+            <option value="0-1 years">0-1 years</option>
+             <option value="2-3 years">2-3 years</option>
+             <option value="4-5 years">4-5 years</option>
+             <option value="6-7 years">6-7 years</option>
+             <option value="8+ years">8+ years</option>
+          </select><br>
+          </div>
+          <div style="width:70%;">
+           <label for="name">Qualifiaction:</label><br>
+          <select name="Qualification" id="Qualification">
+            <option value="Graduation">Graduation</option>
+            <option value="Post Graduation">Post Graduation</option>
+          </select><br>
+         </div>
+         </div>
+
+        <div class="skills">
+          <div style="width:70%;">
           <label for="name">Salary:</label><br>
           <input type="text"  name="salary" id="lbl" class="labl" placeholder="$800-$1200" /><br>
-
+</div>
+<div style="width:70%;">
           <label for="name">Skills:</label><br>
           <input type="text"  name="skills" id="lbl"  class="labl" placeholder="use comma separated.eg:python,javascript" /><br>
+        </div>
+</div>
 
+<div class="desp">
+          <div style="width:100%; padding-bottom:10px;">
+          <label for="name">Description:</label><br>
+          <input type="text"  name="description" id="lbl" class="dsp"/><br>
+</div>
           <h3>Company Detail</h3><hr>
+          <div class="name">
+            <div style="width:70%;">
           <label for="name" >Company Name:</label><br>
           <input type="text" name="companyName" id="lbl" class="labl" placeholder="company name" /><br>
-
+</div>
+<div style="width:70%;">
           <label for="name" >Website:(optional)</label><br>
           <input type="text" name="website" id="lbl" class="labl" placeholder="https://example.com" />
-
+</div></div>
           <div class="bttn">
-           <button style="width:70px;" type="submit" name="submit" class="gform_button button btn btn-danger" value="Submit">Submit</button>
+          <button style="width:100px;" type="submit" name="submit" class="gform_button button btn btn-danger">Submit</button>
           </div>
+          
         </div>
       </form>
       </div>
+</div>
+      
       
 
     {% include 'footer.html' %}
@@ -83,3 +128,4 @@
     ></script>
 </body>
 </html>
+ 

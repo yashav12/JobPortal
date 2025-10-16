@@ -16,21 +16,26 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from myapp import views
+from myapp import views as my_appviews
+from AdminDashboard import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',views.home),
-    path('job listings/',views.job_listings),
-    path('contact us/',views.contact_us),
-    path('post a job/',views.post_a_job),
-    path('submit',views.submit),
-    path('confirm',views.confirm),
-    path("jobdesc",views.description),
-    path("log in/",views.log_in),
-    path('register/',views.register),
-    path('usersubmit',views.user)
-
+    path('',my_appviews.home),
+    path('job listings/',my_appviews.job_listings),
+    path('contact us/',my_appviews.contact_us),
+    path('post a job/',my_appviews.post_a_job),
+    path('submit',my_appviews.submit),
+    path('confirm',my_appviews.confirm),
+    path("jobdesc",my_appviews.description),
+    path("registration/",my_appviews.registration),
+    path('usersubmit',my_appviews.user),
+    path('dashboard',views.dashboard),
+    path('create user',views.create_user),
+     path('create job',views.create_job),
+     path('search',my_appviews.search),
+     path('adminjob',my_appviews.Adminjob),
+     path('adminuser',my_appviews.adminuser)
 ]  
 
 # modelname.objects.all()

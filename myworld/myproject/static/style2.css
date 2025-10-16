@@ -31,6 +31,7 @@
 .bar p {
  animation:time 0.8s linear 1;
 }
+
 @keyframes time{
     0%{
     transform: translateX(0px);
@@ -120,7 +121,9 @@ label{
    padding-top:100px; 
    animation: floatup 4s linear infinite;
 }
-
+img{
+    animation:floatup 4s linear infinite;
+}
 
 @keyframes floatup{
     0%{
@@ -130,6 +133,7 @@ label{
     transform: translateY(-15px);
     }
 }
+
 
 
 

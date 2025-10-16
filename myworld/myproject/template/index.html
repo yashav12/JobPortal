@@ -7,51 +7,75 @@
   <title>Job Portal</title> {# Changed title for clarity #}
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
   <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+  <link href='https://cdn.boxicons.com/fonts/basic/boxicons.min.css' rel='stylesheet'>
   <link rel="stylesheet" href={% static 'style.css' %}>
+  
+<link rel="stylesheet" href="{% static 'animate.min.css' %}">
+<link rel="stylesheet" href="{% static 'aos.css' %}">
+<link rel="stylesheet" href="{% static 'bootstrap.min.css' %}">
+<link rel="stylesheet" href="{% static 'default-icons.css' %}">
+<link rel="stylesheet" href="{% static 'flaticon-skillgro.css' %}">
+<link rel="stylesheet" href="{% static 'flaticon-skillgro-new.css' %}">
+<link rel="stylesheet" href="{% static 'fontawesome-all.min.css' %}">
+<link rel="stylesheet" href="{% static 'magnific-popup.css' %}">
+<link rel="stylesheet" href="{% static 'main.css' %}">
+<link rel="stylesheet" href="{% static 'odometer.css' %}">
+<link rel="stylesheet" href="{% static 'plyr.css' %}">
+<link rel="stylesheet" href="{% static 'select2.min.css' %}">
+<link rel="stylesheet" href="{% static 'spacing.css' %}">
+<link rel="stylesheet" href="{% static 'swiper-bundle.min.css' %}">
+<link rel="stylesheet" href="{% static 'tg-cursor.css' %}">
 </head>
 <body>
 
-  <div class="main-section">
+  <div class="main-section"> 
     <div class="navbar">
       <div class="logo">
-        <b>JOB PORTAL</b>
+        <b style="font-size:30px">CareerNest</b>
       </div>
       <div class="nav-bar-items">
         <ul class="outer-menu">
-          <li class="nav-items"><a class="nav-link" href="/">Home</a></li>
-          <li class="nav-items"><a class="nav-link" href="/job listings">Job Listings</a></li>
-          <li class="nav-items"><a class="nav-link" href="/contact us">Contact Us</a></li>
+          <li style="font-size:20px" class="nav-items"><a class="nav-link" href="/">Home</a></li>
+          <li style="font-size:20px" class="nav-items"><a class="nav-link" href="/find jobs">Find Jobs</a></li>
+          <li style="font-size:20px" class="nav-items"><a class="nav-link" href="/about us">About Us</a></li>
+          <li style="font-size:20px" class="nav-items"><a class="nav-link" href="/contact us">Contact Us</a></li>
         </ul>
       </div>
       <div class="txt-bar">
-        <ul><li class="nav-items"><a class="nav-link" href="/post a job">Post a job</a></li></ul>
-      </div>
+       <a href="/registration"><button class="btn btn-primary btn-sm"><span>+</span>Registration</button></a>
+    </div>
     </div>
 
     <div class="demo">
-      <h1><b>The Easiest Way To Get Your Dream Job</b></h1>
+      <h1>job available<br>You can choose your dream job</h1>
+      <p class="desc">Find great job for build your bright career. Have many job in this plactform.</p>
     </div>
     <div class="text">
-      <form>
+      <form action="/search" method="POST">
+        {% csrf_token %}
         {# Corrected input types to "text" #}
-        <input type="text" placeholder="Job title,company" name="job_title_company" />
+        <input type="text" placeholder="Job title,company" name="title" />
         <input type="text" placeholder="Location" name="location" />
         <div class="menu">
-          <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Select Job Title
-          </button>
-          <ul class="dropdown-menu submenu"> {# Added Bootstrap dropdown-menu class #}
-            <li><a class="dropdown-item" href="#">Software Developer</a></li> {# Added dropdown-item class #}
-            <li><a class="dropdown-item" href="#">Programmer</a></li>
-            <li><hr class="dropdown-divider"></li> {# Added a divider #}
-            <li><a class="dropdown-item" href="#">Other</a></li>
-          </ul>
+        <select name="jobtype" id="jobtype">
+          <option value="Full Time">Full Time</option>
+          <option value="Part Time">Part Time</option>
+          <option value="Internship">
+            Internship
+          </option>
+        </select>
         </div>
-        <button class="btn btn-primary btn-sm" type="submit">
-          <i class="bx bx-search-alt-2"></i>Search Job
+        <button style="width:10%; padding:20px;"class="btn btn-primary btn-sm" type="submit">
+          <i class="bx bx-search-alt-2" ></i>  Search Job
         </button>
       </form>
     </div>
+    <!-- <div>
+      <img class="shape1 aos-init aos-animate" data-aos="fade-down" data-aos-duration="1500" src="assets/img/slider/vector1.webp" width="270" height="234">
+     <img class="shape2 aos-init aos-animate" data-aos="fade-left" data-aos-duration="2000" src="assets/img/slider/vector2.webp" width="201" height="346">
+     <img class="shape3 aos-init aos-animate" data-aos="fade-right" data-aos-duration="2000" src="assets/img/slider/vector3.webp" width="276" height="432">
+     <img class="shape4 aos-init aos-animate" data-aos="fade-left" data-aos-duration="1500" src="assets/img/slider/vector4.webp" width="127" height="121">
+    </div> -->
   </div>
 
   <div class="a1">
@@ -59,17 +83,522 @@
       <h2>Job Portal Stats</h2>
     </div>
     <div class="b">
-      <p>3<br />Candidates</p>
-      <p>6<br />Jobs Posted</p>
-      <p>20<br />Jobs Filled</p>
-      <p>4<br />Companies</p>
+      <p style="font-size:20px">0<br />Candidates</p>
+      <p style="font-size:20px">0<br />Jobs Filled</p>
+      <p style="font-size:20px">0<br />Companies</p>
+      <p style="font-size:20px">0<br />Jobs Posted</p>
     </div>
   </div>
+  <div class="catg">
+    <div style="justify-content:center; text-align:center;padding:30px;"><h2>Popular Category</h2>
+    <p>Many desktop publishing packages and web page editors</p></div>
+    </div>
+    <div style="padding:40px;margin-bottom:4%;">
+    <div style="display:flex;justify-content:space-evenly;margin-left:20px;margin-right:20px;padding:10px;">
+    <div style="background:rgba(194, 173, 175, 0.2);font-size:larger;width:20%;text-align:center;padding:12px;"><p>Accounting/Finance(305)</p>
+    </div>
+    <div style="background:rgba(194, 173, 175, 0.2);font-size:larger;width:20%;text-align:center;padding:12px;"><p>Production/Operation(95)</p>
+    </div>
+    <div style="background:rgba(194, 173, 175, 0.2);font-size:larger;width:20%;text-align:center;padding:12px;"><p>Education/Training(212)</p>
+    </div>
+    <div style="background:rgba(194, 173, 175, 0.2);font-size:larger;width:20%;text-align:center;padding:12px;"><p>Design/Creative(93)</p>
+    </div>
+    </div>
+    <div style="display:flex;justify-content:space-evenly;margin-left:20px;margin-right:20px;padding:10px;">
+    <div style="background:rgba(194, 173, 175, 0.2);font-size:larger;width:20%;text-align:center;padding:12px;"><p>Health & Fitness(4)</p>
+    </div>
+    <div style="background:rgba(194, 173, 175, 0.2);font-size:larger;width:20%;text-align:center;padding:12px;"><p>Research/Consultancy(34)</p>
+    </div>
+    <div style="background:rgba(194, 173, 175, 0.2);font-size:larger;width:20%;text-align:center;padding:12px;"><p>Engineer/Architects(376)</p>
+    </div>
+    <div style="background:rgba(194, 173, 175, 0.2);font-size:larger;width:20%;text-align:center;padding:12px;"><p>Telecommunication(450)</p>
+    </div>
+    </div>
+    <div style="display:flex;justify-content:space-evenly;margin-left:20px;margin-right:20px;padding:10px;">
+    <div style="background:rgba(194, 173, 175, 0.2);font-size:larger;width:20%;text-align:center;padding:12px;"><p>Data Entry/Operator(25)</p>
+    </div>
+    <div style="background:rgba(194, 173, 175, 0.2);font-size:larger;width:20%;text-align:center;padding:12px;"><p>Production & Operation(95)</p>
+    </div>
+    <div style="background:rgba(194, 173, 175, 0.2);font-size:larger;width:20%;text-align:center;padding:12px;"><p>Marketing/Sales(666)</p>
+    </div>
+    <div style="background:rgba(194, 173, 175, 0.2);font-size:larger;width:20%;text-align:center;padding:12px;"><p>Security/Support Service(62)</p>
+    </div>
+    </div>
+    </div>
+    <div style="background:rgba(194, 173, 175, 0.2);">
+    <div style="justify-content:center;text-align:center; padding:50px;">
+      <h2>Recent Job Circulars</h2>
+      <p>Many desktop publishing packages and web page editors</p>
+    </div>
+    <div style="display:flex; gap:50px; padding-bottom:20px; justify-content:center;">
+    <div style="background:white; padding:40px;">
+    <div style="display:flex; gap:10px;">
+      <a href="company-details.html">
+      <img src={% static '1.webp' %} width="75" height="75"></a>
+      <div><h4>Darkento Ltd.</h4>
+      <p>New York, USA</p></div>
+    </div>
+    <div>
+      <h3>Front-end Developer</h3>
+      <p>Full-time</p>
+      <p>CSS3, HTML, Javascript, Bootstrap</p>
+     <div style="gap:60px;display:flex;">
+      <div style="display:flex;"><h4>$5000</h4><span><p>/monthly</p></span></div>
+      <div ><a class="btn-theme btn-sm" href="job-details.html">Apply Now</a></div>
+      </div>
+    </div>
+    </div>
+    <div  style="background:white; padding:40px;">
+    <div style="display:flex; gap:10px;">
+      <a href="company-details.html">
+      <img src={% static '2.webp' %} width="75" height="75"></a>
+      <div><h4>Inspire Fitness Co.</h4>
+      <p>New York, USA</p></div>
+    </div>
+    <div>
+      <h3>Senior UI Designer</h3>
+      <p>Part-time</p>
+      <p>CSS3, HTML, Javascript, Bootstrap</p>
+     <div style="gap:60px;display:flex;">
+      <div style="display:flex;"><h4>$5000</h4><span><p>/monthly</p></span></div>
+      <div ><a class="btn-theme btn-sm" href="job-details.html">Apply Now</a></div>
+      </div>
+    </div>
+    </div>
+    <div  style="background:white; padding:40px;">
+    <div style="display:flex; gap:10px;">
+      <a href="company-details.html">
+      <img src={% static '3.webp' %} width="75" height="75"></a>
+      <div><h4>Cogent Data</h4>
+      <p>New York, USA</p></div>
+    </div>
+    <div>
+      <h3>Graphic Designer</h3>
+      <p>Remote</p>
+      <p>CSS3, HTML, Javascript, Bootstrap</p>
+     <div style="gap:60px;display:flex;">
+      <div style="display:flex;"><h4>$5000</h4><span><p>/monthly</p></span></div>
+      <div ><a class="btn-theme btn-sm" href="job-details.html">Apply Now</a></div>
+      </div>
+    </div>
+    </div>
+    </div>
+    <div style="display:flex;  gap:50px; padding-bottom:10%; justify-content:center;">  
+    <div  style="background:white; padding:40px;">
+    <div style="display:flex; gap:10px;">
+      <a href="company-details.html">
+      <img src={% static '4.webp' %} width="75" height="75"></a>
+      <div><h4>Obelus Concepts</h4>
+      <p>New York, USA</p></div>
+    </div>
+    <div>
+      <h3>UX Researcher</h3>
+      <p>Full-time</p>
+      <p>CSS3, HTML, Javascript, Bootstrap</p>
+     <div style="gap:60px;display:flex;">
+      <div style="display:flex;"><h4>$5000</h4><span><p>/monthly</p></span></div>
+      <div ><a class="btn-theme btn-sm" href="job-details.html">Apply Now</a></div>
+      </div>
+    </div>
+    </div>
+    <div  style="background:white; padding:40px;">
+    <div style="display:flex; gap:10px;">
+      <a href="company-details.html">
+      <img src={% static '5.webp' %} width="75" height="75"></a>
+      <div><h4>Sanguine Skincare</h4>
+      <p>New York, USA</p></div>
+    </div>
+    <div>
+      <h3>Andriod Developer</h3>
+      <p>Remote</p>
+      <p>CSS3, HTML, Javascript, Bootstrap</p>
+     <div style="gap:60px;display:flex;">
+      <div style="display:flex;"><h4>$5000</h4><span><p>/monthly</p></span></div>
+      <div ><a class="btn-theme btn-sm" href="job-details.html">Apply Now</a></div>
+      </div>
+    </div>
+    </div>
+    <div  style="background:white; padding:40px;">
+    <div style="display:flex; gap:10px;">
+      <a href="company-details.html">
+      <img src={% static '6.webp' %} width="75" height="75"></a>
+      <div><h4>Flux Water Gear</h4>
+      <p>New York, USA</p></div>
+    </div>
+    <div>
+      <h3>Product Designer</h3>
+      <p>Full-time</p>
+      <p>CSS3, HTML, Javascript, Bootstrap</p>
+     <div style="gap:60px;display:flex;">
+      <div style="display:flex;"><h4>$5000</h4><span><p>/monthly</p></span></div>
+      <div ><a class="btn-theme btn-sm" href="job-details.html">Apply Now</a></div>
+      </div>
+    </div>
+    </div>
+  </div>
+</div>
+</div>
+<div >
+  <div style="justify-content:center;text-align:center; padding-top:40px;">
+   <h2>How It Work?</h2>
+      <p>Many desktop publishing packages and web page editors</p>
+    </div>
+    <div style="padding:50px; display:flex; gap:30px; margin-left:12%;margin-right:40px;">
+    <div style="padding:10px;text-align:center;gap:10px;">
+      <img src={% static 'w1.webp' %}>
+      <h4>Create an Account</h4>
+      <p>It is long established fact reader <br>distracted readable content</p>
+    </div>
+    <div style="margin-top:50px;"><img src={% static 'right-arrow.webp' %}></div>
+<div style="padding:10px;text-align:center;gap:10px;">
+  <img src={% static 'w3.webp' %}>
+     <h4>CV/Resume</h4>
+      <p>It is long established fact reader <br>distracted readable content</p>
+    </div>
+    <div style="margin-top:50px;"><img src={% static 'right-arrow.webp' %}></div>
+<div style="padding:10px;text-align:center;gap:10px;">
+  <img src={% static 'w4.webp' %}>
+    <h4>Find Your Job</h4>
+      <p>It is long established fact reader <br>distracted readable content</p>
+    </div>
+    <div style="margin-top:50px;"><img src={% static 'right-arrow.webp' %}></div>
+<div style="padding:10px;text-align:center;gap:10px;">
+  <img src={% static 'w1.webp' %}>
+      <h4>Save & Apply</h4>
+      <p>It is long established fact reader <br>distracted readable content</p>
+    </div>
+
+  </div>
+<div style="padding:50px;">
+
+  <div style="justify-content:center;text-align:center; padding:40px;">
+      <h2>Best Candidate</h2>
+      <p>Many desktop publishing packages and web page editors</p>
+    </div>
+    <div style="display:flex;gap:50px; padding-bottom:20px; justify-content:center;">
+    <div style="background:rgba(194, 173, 175, 0.2);padding:20px;text-align:center;">
+      <a href="company-details.html">
+      <img src={% static '1 (1).webp' %} width="160" height="160"></a>
+      <h4>Lauran Benitez</h4>
+      <p>Web Designer</p> 
+      <i class='bxr  bxs-star'  style='color:#e69b00'></i> 
+       <i class='bxr  bxs-star'  style='color:#e69b00'></i> 
+        <i class='bxr  bxs-star'  style='color:#e69b00'></i> 
+         <i class='bxr  bxs-star'  style='color:#e69b00'></i> 
+          <i class='bxr  bxs-star'  style='color:#e69b00'></i> 
+      <p>CSS3, HTML, Javascript,<br> Bootstrap</p>
+       <a class="btn-theme btn-white btn-sm" href="candidate-details.html">View Profile</a>
+    </div>
+
+
+<div style="background:rgba(194, 173, 175, 0.2);padding:20px;text-align:center;">
+      <a href="company-details.html">
+      <img src={% static '2 (1).webp' %} width="160" height="160"></a>
+      <h4>Valentine Anders</h4>
+      <p>UI/UX Designer</p> 
+      <i class='bxr  bxs-star'  style='color:#e69b00'></i> 
+       <i class='bxr  bxs-star'  style='color:#e69b00'></i> 
+        <i class='bxr  bxs-star'  style='color:#e69b00'></i> 
+         <i class='bxr  bxs-star'  style='color:#e69b00'></i> 
+          <i class='bxr  bxs-star'  style='color:#e69b00'></i>
+       <p>CSS3, HTML, Javascript,<br> Bootstrap</p>
+       <a class="btn-theme btn-white btn-sm" href="candidate-details.html">View Profile</a>
+    </div>
+
+<div style="background:rgba(194, 173, 175, 0.2);padding:20px;text-align:center;">
+      <a href="company-details.html">
+      <img src={% static '3 (1).webp' %} width="160" height="160"></a>
+      <h4>Shakia Aguilera</h4>
+      <p>Web Designer</p>
+      <i class='bxr  bxs-star'  style='color:#e69b00'></i> 
+       <i class='bxr  bxs-star'  style='color:#e69b00'></i> 
+        <i class='bxr  bxs-star'  style='color:#e69b00'></i> 
+         <i class='bxr  bxs-star'  style='color:#e69b00'></i> 
+          <i class='bxr  bxs-star'  style='color:#e69b00'></i> 
+       <p>CSS3, HTML, Javascript,<br> Bootstrap</p>
+       <a class="btn-theme btn-white btn-sm" href="candidate-details.html">View Profile</a>
+    </div>
+
+<div style="background:rgba(194, 173, 175, 0.2);padding:20px;text-align:center;">
+      <a href="company-details.html">
+      <img src={% static '4 (1).webp' %} width="160" height="160"></a>
+      <h4>Assunta Manson</h4>
+      <p>App Developer</p>
+      <i class='bxr  bxs-star'  style='color:#e69b00'></i> 
+       <i class='bxr  bxs-star'  style='color:#e69b00'></i> 
+        <i class='bxr  bxs-star'  style='color:#e69b00'></i> 
+         <i class='bxr  bxs-star'  style='color:#e69b00'></i> 
+          <i class='bxr  bxs-star'  style='color:#e69b00'></i> 
+       <p>CSS3, HTML, Javascript,<br> Bootstrap</p>
+       <a class="btn-theme btn-white btn-sm" href="candidate-details.html">View Profile</a>
+    </div>
+</div>
+</div>
+
+<div style="background:rgba(194, 173, 175, 0.2);">
+<div style="justify-content:center;text-align:center; padding:40px;">
+      <h2>Our Happy Clients</h2>
+      <p>Many desktop publishing packages and web page editors</p>
+    </div>
+  <!-- <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active" data-bs-interval="10000">
+      <div  style="background:white; padding:40px;">
+      <div style="display:flex; gap:10px;">
+      <a href="company-details.html">
+      <img src={% static '1 (2).webp' %} width="75" height="75"></a>
+      <div><h4>Roselia Hamets</h4>
+      <p>Hiring Manager</p></div>
+      </div>
+      </div>
+      <p>It is a long established fact that reader will distracted the readable<br>
+         content page looking at its layout point using that has more-or-less<br>
+        normal distribution of letters opposed using content making.</p>
+        <i class='bxr  bxs-star'  style='color:#e69b00'></i> 
+       <i class='bxr  bxs-star'  style='color:#e69b00'></i> 
+        <i class='bxr  bxs-star'  style='color:#e69b00'></i> 
+         <i class='bxr  bxs-star'  style='color:#e69b00'></i> 
+          <i class='bxr  bxs-star'  style='color:#e69b00'></i> 
+    </div>
+    </div>
+   <div class="carousel-inner">
+    <div class="carousel-item" data-bs-interval="10000">
+      <div  style="background:white; padding:40px;">
+      <div style="display:flex; gap:10px;">
+      <a href="company-details.html">
+      <img src={% static '1 (2).webp' %} width="75" height="75"></a>
+      <div><h4>Roselia Hamets</h4>
+      <p>Hiring Manager</p></div>
+      </div>
+      </div>
+      <p>It is a long established fact that reader will distracted the readable<br>
+         content page looking at its layout point using that has more-or-less<br>
+        normal distribution of letters opposed using content making.</p>
+        <i class='bxr  bxs-star'  style='color:#e69b00'></i> 
+       <i class='bxr  bxs-star'  style='color:#e69b00'></i> 
+        <i class='bxr  bxs-star'  style='color:#e69b00'></i> 
+         <i class='bxr  bxs-star'  style='color:#e69b00'></i> 
+          <i class='bxr  bxs-star'  style='color:#e69b00'></i> 
+    </div>
+    </div>
+   
+    <div class="carousel-item">
+      <div  style="background:white; padding:40px;">
+      <div style="display:flex; gap:10px;">
+      <a href="company-details.html">
+      <img src={% static '1 (2).webp' %} width="75" height="75"></a>
+      <div><h4>Roselia Hamets</h4>
+      <p>Hiring Manager</p></div>
+      </div>
+      </div>
+      <p>It is a long established fact that reader will distracted the readable<br>
+         content page looking at its layout point using that has more-or-less<br>
+        normal distribution of letters opposed using content making.</p>
+        <i class='bxr  bxs-star'  style='color:#e69b00'></i> 
+       <i class='bxr  bxs-star'  style='color:#e69b00'></i> 
+        <i class='bxr  bxs-star'  style='color:#e69b00'></i> 
+         <i class='bxr  bxs-star'  style='color:#e69b00'></i> 
+          <i class='bxr  bxs-star'  style='color:#e69b00'></i> 
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button> -->
+</div>
+<section class="categories-area section-py-120">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-xl-5 col-lg-7">
+                        <div class="section__title text-center mb-40">
+                            <span class="sub-title">Trending Categories</span>
+                            <h2 class="title">Top Category We Have</h2>
+                            <p class="desc">when known printer took a galley of type scrambl edmake</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <div class="categories__wrap">
+                            <div class="swiper categories-active">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide">
+                                        <div class="categories__item">
+                                            <a href="courses.html">
+                                                <div class="icon">
+                                                   
+                                                </div>
+                                                <span class="name">Graphic Design</span>
+                                                <span class="courses">(22)</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="categories__item">
+                                            <a href="courses.html">
+                                                <div class="icon">
+                                                   
+                                                </div>
+                                                <span class="name">Finance</span>
+                                                <span class="courses">(41)</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="categories__item">
+                                            <a href="courses.html">
+                                                <div class="icon">
+                                                   
+                                                </div>
+                                                <span class="name">Development</span>
+                                                <span class="courses">(29)</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="categories__item">
+                                            <a href="courses.html">
+                                                <div class="icon">
+                                                   
+                                                </div>
+                                                <span class="name">Marketing</span>
+                                                <span class="courses">(31)</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="categories__item">
+                                            <a href="courses.html">
+                                                <div class="icon">
+                                                  
+                                                </div>
+                                                <span class="name">Life Style</span>
+                                                <span class="courses">(23)</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="categories__item">
+                                            <a href="courses.html">
+                                                <div class="icon">
+                                                   
+                                                </div>
+                                                <span class="name">Management</span>
+                                                <span class="courses">(19)</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="categories__item">
+                                            <a href="courses.html">
+                                                <div class="icon">
+                                                    
+                                                </div>
+                                                <span class="name">App Design</span>
+                                                <span class="courses">(18)</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="categories__nav">
+                                <button class="categories-button-prev">
+                                    <svg width="16" height="14" viewBox="0 0 16 14" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M15 7L1 7M1 7L7 1M1 7L7 13" stroke="#161439" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                </button>
+                                <button class="categories-button-next">
+                                    <svg width="16" height="14" viewBox="0 0 16 14" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M1 7L15 7M15 7L9 1M15 7L9 13" stroke="#161439" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+</section>
+   
+    
+      
+    <div  style="background:white; padding:40px;">
+    <div style="display:flex; gap:10px;">
+      <a href="company-details.html">
+      <img src={% static '2 (1).webp' %} width="75" height="75"></a>
+      <div><h4>Assunta Manson</h4>
+      <p>Hiring Manager</p></div>
+      </div>
+      <p>It is a long established fact that reader will distracted the readable<br>
+         content page looking at its layout point using that has more-or-less<br>
+        normal distribution of letters opposed using content making.</p>
+        <i class='bxr  bxs-star'  style='color:#e69b00'></i> 
+       <i class='bxr  bxs-star'  style='color:#e69b00'></i> 
+        <i class='bxr  bxs-star'  style='color:#e69b00'></i> 
+         <i class='bxr  bxs-star'  style='color:#e69b00'></i> 
+          <i class='bxr  bxs-star'  style='color:#e69b00'></i> 
+    </div>
+    <div  style="background:white; padding:40px;">
+    <div style="display:flex; gap:10px;">
+      <a href="company-details.html">
+      <img src={% static '2 (2).webp' %} width="75" height="75"></a>
+      <div><h4>Amira Shepard</h4>
+      <p>Hiring Manager</p></div>
+      </div>
+      <p>It is a long established fact that reader will distracted the readable<br>
+         content page looking at its layout point using that has more-or-less<br>
+        normal distribution of letters opposed using content making.</p>
+        <i class='bxr  bxs-star'  style='color:#e69b00'></i> 
+       <i class='bxr  bxs-star'  style='color:#e69b00'></i> 
+        <i class='bxr  bxs-star'  style='color:#e69b00'></i> 
+         <i class='bxr  bxs-star'  style='color:#e69b00'></i> 
+          <i class='bxr  bxs-star'  style='color:#e69b00'></i> 
+    </div>
+    <div  style="background:white; padding:40px;">
+    <div style="display:flex; gap:10px;">
+      <a href="company-details.html">
+      <img src={% static '3 (1).webp' %} width="75" height="75"></a>
+      <div><h4>Joshua George</h4>
+      <p>Hiring Manager</p></div>
+      </div>
+      <p>It is a long established fact that reader will distracted the readable<br>
+         content page looking at its layout point using that has more-or-less<br>
+        normal distribution of letters opposed using content making.</p>
+        <i class='bxr  bxs-star'  style='color:#e69b00'></i> 
+       <i class='bxr  bxs-star'  style='color:#e69b00'></i> 
+        <i class='bxr  bxs-star'  style='color:#e69b00'></i> 
+         <i class='bxr  bxs-star'  style='color:#e69b00'></i> 
+          <i class='bxr  bxs-star'  style='color:#e69b00'></i> 
+    </div>
+    <div  style="background:white; padding:40px;">
+    <div style="display:flex; gap:10px;">
+      <a href="company-details.html">
+      <img src={% static '3 (2).webp' %} width="75" height="75"></a>
+      <div><h4>Rosie Patton</h4>
+      <p>Hiring Manager</p></div>
+      </div>
+      <p>It is a long established fact that reader will distracted the readable<br>
+         content page looking at its layout point using that has more-or-less<br>
+        normal distribution of letters opposed using content making.</p>
+        <i class='bxr  bxs-star'  style='color:#e69b00'></i> 
+       <i class='bxr  bxs-star'  style='color:#e69b00'></i> 
+        <i class='bxr  bxs-star'  style='color:#e69b00'></i> 
+         <i class='bxr  bxs-star'  style='color:#e69b00'></i> 
+          <i class='bxr  bxs-star'  style='color:#e69b00'></i> 
+    </div>
+    </div>
 
   <div class="id">
     <div class="c">
       {# Dynamically show the count of listed jobs if allJobs is a queryset #}
-      <h2>{% if allJobs %}{{ allJobs|length }}{% else %}0{% endif %} Job Listed</h2>
+      <h2>Job Listed</h2>
     </div>
     <div> {# Added flex-wrap and gap for better layout #}
       {% for job in allJobs %}
@@ -83,11 +612,11 @@
             <i class='bx bx-lg bxs-location-plus'></i>{{ job.location }}
 
             {% if job.jobtype == 'Full Time' %}
-              <a href="/jobdesc"> Full Time </a>
+             <button class="btn btn-dark btn-sm"> Part Time </button>
             {% elif job.jobtype == 'Part Time' %}
-              <a href="/jobdesc"> Part Time </a>
+              <button class="btn btn-dark btn-sm"> Full Time</button>
             {% elif job.jobtype == 'Contract' %}
-              <button class="btn btn-info btn-sm"><a href="/jobdesc"> Contract Time </a></button>
+              <button class="btn btn-dark btn-sm"> Contract Time</button>
             {% else %} 
               <button class="btn btn-dark btn-sm">{{ job.jobtype }}</button>
             {% endif %}
@@ -105,12 +634,31 @@
   <div class="e1">
     <div class="e" >
       <p><h2>Looking For a Job</h2>
-      <button class="btn btn-primary btn-sm">Sign Up</button></p>
+      <a href="/log in"><button class="btn btn-primary btn-sm">Sign Up</button></a></p>
     </div>
   </div>
 
   {% include 'footer.html' %}
+  <script src="{% static 'ajax-form.js' %}"></script>
+  <script src="{% static 'aos.js' %}"></script>
+  <script src="{% static 'bootstrap.min.js' %}"></script>
+  <script src="{% static 'imagesloaded.pkgd.min.js' %}"></script>
+  <script src="{% static 'jquery.appear.js' %}"></script>
+  <script src="{% static 'jquery.circleType.js' %}"></script>
+  <script src="{% static 'jquery.lettering.js' %}"></script>
+  <script src="{% static 'jquery.magnific-popup.min.js' %}"></script>
+  <script src="{% static 'jquery.marquee.min.js' %}"></script>
+  <script src="{% static 'jquery.odometer.min.js' %}"></script>
+  <script src="{% static 'main.js' %}"></script>
+  <script src="{% static 'plyr.min.js' %}"></script>
+  <script src="{% static 'select2.min.js' %}"></script>
+  <script src="{% static 'svg-inject.min.js' %}"></script>
+  <script src="{% static 'swiper-bundle.min.js' %}"></script>
+  <script src="{% static 'tg-cursor.min.js' %}"></script>
+  <script src="{% static 'tween-max.min.js' %}"></script>
+  <script src="{% static 'vivus.min.js' %}"></script>
+  <script src="{% static 'wow.min.js' %}"></script>
+  <script src="{% static 'jquery-3.6.0.min' %}"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
-
 </body>
 </html>

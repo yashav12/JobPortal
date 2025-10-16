@@ -26,14 +26,15 @@
     padding:40px;
     
 }
+.ok-1{
+    animation: floatup 4s linear infinite;
+}
 .inner-menu{
+   
     padding:50px;
     gap: 3rem;
     color:aliceblue;
     
-}
-.ok-1{
-    animation: floatup 4s linear infinite;
 }
 
 .inner-menu img{
@@ -52,18 +53,20 @@
     
 }
 .inner-menu-1{
+   
     padding:50px;
     gap: 3rem;
     color:aliceblue;
 }
 .inner-menu-2{
+   
     padding:50px;
     gap: 3rem;
     color:aliceblue;
 }
 
 .id-1{
-    background-color:rgb(50, 53, 52);
+    background-color:rgb(0, 0, 0);
     justify-content: space-around;
     padding:50px;
     padding-bottom:50px;
@@ -131,7 +134,9 @@
 .fluid-4 h4{
     color:aliceblue;
 }
-
+.fluid-5 img{
+    color:white;
+}
 /* post.html file code */
 
 .contain{
@@ -154,10 +159,10 @@
     background-repeat:no-repeat ;
     background-size: cover;
 }
-.labl{
-   
-    margin-bottom:10px; 
-}
+/* .labl{
+    width:100% !important;
+} */
+
 select{
      margin-bottom:10px; 
      width:100%;
@@ -167,19 +172,68 @@ select{
     width: 100% !important;
 }
 .bttn{
-   margin-left: 90%;
+   margin-left: 40%;
    padding-top:30px;
-    padding-bottom:60px;
+padding-bottom:60px;
+padding:10px;
   }
 .table1{
     border-style: solid;
     border-color: grey;
     padding: 50px;
-    
-    
-}
+    }
+
+  
 .cntn:hover{
     transform: scale(1.2);
+}
+
+.title{
+    display: flex!important;
+    align-items: center!important;
+    justify-content: center!important;
+    gap:40px;
+    padding:10px;
+}
+
+.type{
+    display: flex!important;
+    align-items: center!important;
+    justify-content: center!important;
+    gap:40px;
+    padding:10px;
+}
+.skills{
+    display: flex!important;
+    align-items: center!important;
+    justify-content: center!important;
+    gap:40px;
+    padding:10px;
+}
+
+.name{
+    display: flex!important;
+    align-items: center!important;
+    justify-content: center!important;
+    gap:40px;
+    padding:10px;
+}
+
+.qual{
+     display: flex!important;
+    align-items: center!important;
+    justify-content: center!important;
+    gap:40px;
+    padding:10px;
+}
+.desp{
+    align-items: center!important;
+    justify-content: center!important;
+    gap:40px;
+    padding:10px;
+}
+.dsp{
+    padding:50px;
 }
 
 @keyframes floatup{
